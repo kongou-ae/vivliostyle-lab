@@ -3,7 +3,7 @@ module.exports = {
   author: 'Isaac Newton', // default to 'author' in 'package.json' or undefined
   language: 'la', // default to 'en'
   size: 'A4',
-  theme: 'theme', // .css or local dir or npm package. default to undefined
+  theme: 'theme/theme.css', // .css or local dir or npm package. default to undefined
   entry: [
     'main.md'
   ],
