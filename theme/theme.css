@@ -1,0 +1,129 @@
+/*
+ * Vivliostyle Theme Simple
+ * author: MatsumotoYusuke <kongou_ae@aimless.jp>
+ */
+ @page {
+  size: A4;
+   
+  margin-top: 20mm;
+  margin-right: 20mm;
+  margin-left: 20mm;
+  margin-bottom: 25mm;
+   
+  padding-top: 5mm;
+  padding-bottom: 5mm;
+}
+
+@page {
+  @bottom-center {
+    content: counter(page) " / " counter(pages) ;
+    border-top:1pt solid black;
+    white-space: pre;
+    color: gray;
+    font-size:9pt;
+  }
+}
+
+@page {
+  @top-center {
+    border-bottom:1pt solid black;
+    vertical-align: middle;
+    color: gray;
+    font-size:9pt;
+  }
+}
+
+@page {
+  @top-left {
+    content: env(pub-title);
+    font-size:9pt;
+  }
+}
+   
+/*-------------------------------------
+Body
+-------------------------------------*/
+   
+body {
+  font-family: 'Noto Sans JP';
+  counter-reset: h1 h2 h3 imgcaption tablecaption toch1 toch2 toch3;
+}
+   
+/*-------------------------------------
+heading
+-------------------------------------*/
+h1::before {
+  counter-increment: h1;
+  content: counter(h1)". " ;
+}
+
+h1 {
+  break-before: page;
+  font-size: 2em;
+  counter-reset: h2 h3;
+}
+ 
+h2::before {
+  counter-increment: h2;
+  content: counter(h1)"."counter(h2)". " ;
+}  
+
+h2 {
+  font-size: 1.5em;
+  counter-reset: h3;
+}
+  
+h3::before {
+  counter-increment: h3;
+  content: counter(h1)"."counter(h2)"."counter(h3)". " ;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+   
+/*-------------------------------------
+Others
+-------------------------------------*/
+
+p {
+  font-size: 10.5pt;
+  text-indent: 1rem;
+}
+
+ol {
+  font-size: 10.5pt;
+}
+
+ul {
+  font-size: 10.5pt;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*-------------------------------------
+table
+-------------------------------------*/
+   
+th,td {
+  border: solid 1px black;
+  padding-left: 2mm;
+  padding-right: 2mm;
+  font-size: 10.5pt;
+}
+
+table {
+  border-collapse:  collapse;
+  margin-left : auto ;  
+  margin-right : auto ;
+}
+
+thead {
+  background-color: dimgray;
+  color: white;
+}
